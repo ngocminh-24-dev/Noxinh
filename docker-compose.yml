@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  admission-portal:
+    image: highschoolvn/noxinh:latest
+    ports:
+      - "7654:8080"
+    environment:
+      SPRING_DATASOURCE_URL: 
+      SPRING_DATASOURCE_USERNAME: 
+      SPRING_DATASOURCE_PASSWORD: 
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.SQLServerDialect
+      SPRING_JPA_HIBERNATE_DDL_AUTO: none
+      SPRING_JPA_SHOW_SQL: "true"
+      SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: "true"
+      # Token configuration
+      SECRET_KEY: 
+      EXPIRATION: 
+      REFRESH_TOKEN_EXPIRATION: 
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
